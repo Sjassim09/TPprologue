@@ -36,6 +36,11 @@ def meilleure_note(noms, notes):
     else:
         print("Aucune note saisie.")
 
+def meilleure_note(noms, notes):
+    """Trouve l'étudiant avec la meilleure note et l'affiche."""
+    index_max = notes.index(max(notes))
+    print(f"L’étudiant ayant la meilleure note est {noms[index_max]} avec {notes[index_max]}.")
+
 if __name__ == "__main__":
     noms, notes = saisir_donnees()
     print("\nDonnées saisies :")
@@ -45,3 +50,4 @@ if __name__ == "__main__":
     moyenne = calculer_moyenne(notes)
     print(f"La moyenne de la classe est de {moyenne:.2f}.")
     afficher_repartition(noms, notes)
+    meilleure_note(noms, notes)
