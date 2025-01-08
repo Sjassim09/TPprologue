@@ -15,7 +15,7 @@ def saisir_donnees():
 
     return noms, notes
 
-if name == "main":
+if __name__ == "__main__":
     noms, notes = saisir_donnees()
     print("\nDonnées saisies :")
     print("Noms :", noms)
