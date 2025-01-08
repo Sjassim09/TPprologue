@@ -21,6 +21,21 @@ def calculer_moyenne(notes):
     """
     return sum(notes) / len(notes) if notes else 0
 
+def afficher_repartition(noms, notes):
+    """Affiche les étudiants ayant réussi et ceux en échec."""
+    reussite = [noms[i] for i in range(len(notes)) if notes[i] >= 10]
+    echec = [noms[i] for i in range(len(notes)) if notes[i] < 10]
+    print("Étudiants ayant réussi :", ", ".join(reussite) if reussite else "Aucun")
+    print("Étudiants en échec :", ", ".join(echec) if echec else "Aucun")
+
+def meilleure_note(noms, notes):
+    """Affiche le nom de l'étudiant ayant obtenu la meilleure note."""
+    if notes:
+        index_meilleure_note = notes.index(max(notes))
+        print(f"La meilleure note est de {max(notes)} obtenue par {noms[index_meilleure_note]}.")
+    else:
+        print("Aucune note saisie.")
+
 if __name__ == "__main__":
     noms, notes = saisir_donnees()
     print("\nDonnées saisies :")
@@ -29,3 +44,4 @@ if __name__ == "__main__":
 
     moyenne = calculer_moyenne(notes)
     print(f"La moyenne de la classe est de {moyenne:.2f}.")
+    afficher_repartition(noms, notes)
