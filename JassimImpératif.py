@@ -15,8 +15,17 @@ def saisir_donnees():
 
     return noms, notes
 
+def calculer_moyenne(notes):
+    """
+    Calcule la moyenne d'une liste de notes.
+    """
+    return sum(notes) / len(notes) if notes else 0
+
 if __name__ == "__main__":
     noms, notes = saisir_donnees()
     print("\nDonnées saisies :")
     print("Noms :", noms)
     print("Notes :", notes)
+
+    moyenne = calculer_moyenne(notes)
+    print(f"La moyenne de la classe est de {moyenne:.2f}.")
