@@ -12,8 +12,8 @@ parent(marc, sophie).
 parent(jacques, marc).
 parent(julie, sophie).
 
-père(X, Y) :- homme(X), parent(X, Y).
-mère(X, Y) :- femme(X), parent(X, Y).
+pï¿½re(X, Y) :- homme(X), parent(X, Y).
+mï¿½re(X, Y) :- femme(X), parent(X, Y).
 
 grandparent(X,Y) :- parent(X,Z), parent(Z,Y).
 
